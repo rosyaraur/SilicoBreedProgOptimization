@@ -208,9 +208,60 @@ for (i in 1:10) {
   cat(sprintf("Rank %d: Parent %d x Parent %d | Predicted Yield: %.4f\n", 
               i, p1, p2, predictions[idx]))
 }
+---
+
+## Setup and Troubleshooting
+
+To run this hybrid simulation, you will need R installed on your machine, alongside a Python environment configured for deep learning.
+
+### 1. Standard Dependencies
+
+Install the required R packages for the simulation and visualization:
+
+```R
+install.packages(c("AlphaSimR", "ggplot2", "reticulate", "keras3"))
 
 ```
 
-```
+### 2. Python Backend Initialization
+
+Because the AI predictive mating module relies on Python's TensorFlow framework under the hood, you must initialize the `keras3` environment on your first run.
+
+```R
+library(keras3)
+keras3::install_keras()
 
 ```
+
+*Note: This command will automatically set up a local Python environment (usually via Miniconda or a virtualenv) and install the necessary TensorFlow/Keras binaries.*
+
+### 3. Common Issues & Solutions
+
+* **Issue: "The keras package is deprecated. Please use the keras3 package instead."**
+* **Solution:** Posit recently overhauled the R-to-Python bridge. This project has been updated to use `keras3`. Ensure you are loading `library(keras3)` instead of `library(keras)`. If you must run older legacy scripts, add `py_require_legacy_keras()` immediately after loading the old library.
+
+
+* **Issue: "The following objects are masked from 'package:igraph': %<-%, normalize"**
+* **Solution:** This is a harmless warning. It simply means both `keras3` and `igraph` share a few function names, and R is defaulting to the Keras versions. You can safely ignore this.
+
+
+* **Issue: RStudio crashes or aborts during model training.**
+* **Solution:** This is usually a memory allocation issue between R and the Python backend. Try restarting your R session, clearing your workspace, and ensuring your R installation and Python installations match architectures (e.g., both 64-bit, or both ARM64 for Apple Silicon).
+
+
+
+---
+
+## Usage
+
+The entire project is consolidated into a master script, designed to be highly modular.
+
+1. Clone this repository or download the master `.R` script.
+2. Open the script in RStudio or your preferred R environment.
+3. Run the script. The script is structured into modular phases, allowing you to isolate specific simulations (e.g., Structural Schemes, Rare Allele Schemes, or AI Predictive Mating).
+4. Visualizations will automatically generate in your plot viewer, and AI mating recommendations will print to the console at the end of the execution block.
+
+
+```
+
+
