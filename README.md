@@ -2,21 +2,6 @@
 
 An advanced stochastic simulation of a recurrent Doubled Haploid (DH) crop breeding program coupled with a deep learning predictive mating engine. This project utilizes the `AlphaSimR` package in R to model and evaluate mating strategies, balancing short-term genetic yield with the long-term preservation of genetic diversity. Furthermore, it integrates a neural network (via `keras3` and `reticulate`) to intelligently predict and optimize future crossing blocks.
 
-## Table of Contents
-
-* [Overview](https://www.google.com/search?q=%23overview)
-* [Prerequisites](https://www.google.com/search?q=%23prerequisites)
-* [Usage](https://www.google.com/search?q=%23usage)
-* [Project Methodology](https://www.google.com/search?q=%23project-methodology)
-1. [Baseline Pipeline Architecture](https://www.google.com/search?q=%231-baseline-pipeline-architecture)
-2. [Diversity Benchmarking](https://www.google.com/search?q=%232-diversity-benchmarking)
-3. [Structural Mating Designs](https://www.google.com/search?q=%233-structural-mating-designs)
-4. [Rare Allele Preservation (RAS)](https://www.google.com/search?q=%234-rare-allele-preservation-ras)
-5. [AI-Driven Predictive Mating](https://www.google.com/search?q=%235-ai-driven-predictive-mating)
-
-
-* [Outputs and Visualization](https://www.google.com/search?q=%23outputs-and-visualization)
-
 ## Overview
 
 Modern commercial breeding programs face a critical trade-off: aggressive truncation selection maximizes short-term yield but rapidly depletes additive genetic variance, leading to genetic plateaus and the extinction of rare alleles.
