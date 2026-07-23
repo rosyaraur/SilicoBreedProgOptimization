@@ -1,4 +1,4 @@
-# title: "AlphaSimR & Keras Deep Learning Breeding Pipeline"
+# title: AlphaSimR & Keras Deep Learning Breeding Pipeline- Concept
 
 ### **1. Environment Setup & Initialization**
 Before beginning the simulation, we must load the necessary libraries and set a random seed to ensure our results are reproducible.
